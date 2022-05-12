@@ -1,0 +1,22 @@
+>>value types:
+    used to solve the impedance mismatch.
+    an object of vaue types has no database entity and there is no mapping table.
+it belong to an entity instances.
+    value types doesn't have identifiers or identiy property.
+
+@Embeddable - use for value type class
+@Embedded - used in the entity class to embedded the value type class
+          - to embedded the value type properties to entity table
+
+>>two methods to get data from database
+1.LOAD
+   it takes two arguments like .load(class, id);
+   it use to display the values from the entity table which have the given id(primary key)
+2.GET
+   use to get data from table
+
+>>saveOrUpdate
+    to save or update the values by changing the values of columns in entity class table
+>>update
+    updating the persistant object from the database
+    we can't update detached object
