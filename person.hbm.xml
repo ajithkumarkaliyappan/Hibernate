@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+ <hibernate-mapping>
+ <class name="test.Person" table="PERSON">
+ <id name="personID" type="string">
+ <column name="PERSONID" length="10" />
+ <generator class="assigned" />
+ </id>
+ <property name="personName" type="string">
+ <column name="PERSONNAME" length="40" />
+ </property>
+ <many-to-one name="personDetail" class="test.PersonInfo"
+ column="PERSONINFO" not-null="true" cascade="all" unique="true" />
+ </class>
+ <class name="test.PersonInfo" table="PERSONINFO">
+ <id name="infoid" type="string">
+ <column name="PERSONINFO" length="20" />
+ <generator class="assigned" />
+</id>
+<property name="address" type="string">
+ <column name="ADDRESS" length="20" />
+ </property>
+ <property name="job" type="string">
+ <column name="JOB" length="20" />
+ </property>
+ <property name="income" type="int">
+ <column name="INCOME"  />
+ </property>
+ </class>
+ </hibernate-mapping>
